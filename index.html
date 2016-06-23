@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+<link rel="stylesheet" href="styles.css">
+<script
+        src="https://code.jquery.com/jquery-1.10.2.js">
+</script>
+
+<head>
+    <h1>Processing finite automaton</h1>
+</head>
+<body>
+
+<p>Select automaton:
+    <label for="mySelect"></label><select id="mySelect"></select>
+</p>
+
+<p>Write a word to check:
+    <label for="inputWords"></label><input type="text" id="inputWords" value="">
+</p>
+
+<br/>
+
+<button type="button" id="myBtn" onclick="myFunction()">Run automaton</button>
+
+<br/>
+<br/>
+
+<p id="output"></p>
+</body>
+<script src="js-ui.js"></script>
+<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+</html>
