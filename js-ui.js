@@ -56,7 +56,7 @@ function myFunction() {
             }
         }
     }
-    d3.
+    
     document.getElementById("output").innerHTML = message;
 }
 
