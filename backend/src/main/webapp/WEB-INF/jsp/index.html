@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<script 
+src="https://code.jquery.com/jquery-1.10.2.js">
+</script>
+
+<body>
+<script>
+	var xhr = new XMLHttpRequest();
+	xhr.onreadystatechange = function() {
+		if (xhr.readyState == 4) {
+			var data = xhr.responseText;
+			alert(data);
+		}
+	}
+	xhr.open('GET', 'Controller', true);
+	xhr.send(null);
+</script>
+
+	<p>Select automata:
+	<select id="mySelect"></select>
+	</p>
+	
+	<p>Write a word to check:
+	<input type="text" id="myText" value="">
+	</p>
+	
+	<br/>
+	
+	<button type="button" id="myBtn" onclick="myFunction()">Run automata</button>
+	
+	<br/>
+	<br/>
+	
+	<p id="output"></p>
+</body>
+<script src="js-ui.js"></script>
+</html>

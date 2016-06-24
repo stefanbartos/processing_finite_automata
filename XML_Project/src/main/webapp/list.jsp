@@ -1,0 +1,1 @@
+<% String names = (String) request.getAttribute("names"); %>
