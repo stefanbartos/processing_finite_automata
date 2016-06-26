@@ -1,10 +1,5 @@
 package cz.muni.fi.pb138;
 
-/**
- * Created by laky on 24.6.16.
- */
-
-
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,12 +10,18 @@ import java.io.*;
 import java.net.URI;
 import java.net.URISyntaxException;
 
+
+
+/**
+ * Servlet to listen on /index/*
+ * Basic operation with data stored in data folder in resources (delete, retrieve)
+ * Created by laky on 24.6.16.
+ */
 @WebServlet(urlPatterns = {"/index/*"})
 public class Controller extends HttpServlet {
 
     @Override
     protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
         String action = request.getPathInfo();
         switch(action) {
             case "/delete":
@@ -52,6 +53,13 @@ public class Controller extends HttpServlet {
 
     }
 
+    /**
+     * Function to return all files saved in data folder in xml element names separated with semicolon
+     * @param request HttpServletRequest
+     * @param response HttpServletResponse
+     * @throws ServletException In case something goes wrong with server
+     * @throws IOException In case something goes wrong with IO operations
+     */
     private void listFiles(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         StringBuilder temp = new StringBuilder();
         File file = null;
@@ -85,6 +93,14 @@ public class Controller extends HttpServlet {
         out.flush();
     }
 
+    /**
+     * Removes files closely specified in parameter automataToDelete of request. In case no such file was found, nothing
+     * happens
+     * @param request HttpServletRequest
+     * @param response HttpServletResponse
+     * @throws ServletException In case something goes wrong with server
+     * @throws IOException In case something goes wrong with IO operations
+     */
     private void removeFiles(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String str = request.getParameter("automataToDelete");
         File file = null;
@@ -107,6 +123,14 @@ public class Controller extends HttpServlet {
         String msg = file.getAbsolutePath();
     }
 
+    /**
+     * Reads and return entire XML file for further processing. XML file to read is specified in automataToSelect
+     * parameter of request
+     * @param request HttpServletRequest
+     * @param response HttpServletResponse
+     * @throws ServletException In case something goes wrong with server
+     * @throws IOException In case something goes wrong with IO operations
+     */
     private void selectAutomata(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String str = request.getParameter("automataToSelect");
         File file = null;
