@@ -59,7 +59,7 @@ function selectAutomata() {
             var data = xhr.responseText;
             alert(data);
         }
-    }
+    };
     xhr.open('GET', 'index/selectAutomata?automataToSelect='+temp, true);
     xhr.send(null);
 }
@@ -82,7 +82,7 @@ function deleteAutomata() {
             var data = xhr.responseText;
             alert(data);
         }
-    }
+    };
     xhr.open('DELETE', 'index/delete?automataToDelete='+temp, true);
     xhr.send(null);
 }
