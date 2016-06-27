@@ -39,7 +39,8 @@
         <para>
             Táto časť implementácie bola mojou hlavnou prácou. Pri riešení som narazil na rôzne problémy ako napr.
             rozmiestnenie jednotlivých stavov, tak sa prechody medzi sebou, čo najmenej prekrývali a stavy neboli
-            veľmi blízko alebo naopak ďaleko rozmiestnené. Knižnica d3js má dobrú dokumentáciu a je ľahko implemetovateľná.
+            veľmi blízko alebo naopak ďaleko rozmiestnené. Knižnica d3js má dobrú dokumentáciu a je ľahko
+            implemetovateľná.
             Ponúka funkcionálny sposôb programovania, ktorý môže byť niekedy ťažší na pochopenie. Na druhej strane
             svg grafika je oproti tejto knižnici veľmi pracná.
         </para>
@@ -48,6 +49,18 @@
         </para>
     </chapter>
     <chapter xml:id="433504">
-
+        <title>Frontend</title>
+        <para>Pre túto aplikáciu som vytvoril frontend, teda jednoduché uživatelské rozhranie, jeho implementáciu v
+            javascripte a výpočet automatu nad dátami z xml súboru.
+        </para>
+        <para>
+            S komponentami UI sa pracovalo jednoducho aj napriek tomu, že som doteraz s js nemal žiadne skúsenosti.
+            Parsovanie dát z xml bolo o niečo zložitejsie ale užitočným sa ukázalo rozšírenie JQuery. Pre trochu
+            poriadku som js umiestnil do samostatného súboru a prepojil s HTML.
+        </para>
+        <para>
+            Na projekte som sa naučil základy js, pozrel sa na niektoré funkcie JQuery a pripomenul si prácu s xml
+            dokumentmi.
+        </para>
     </chapter>
 </book>
