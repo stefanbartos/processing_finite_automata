@@ -2,6 +2,10 @@
 <html>
 <link rel="stylesheet" href="styles.css">
 <script
+        src="https://d3js.org/d3.v3.min.js" charset="utf-8">
+</script>
+
+<script
         src="https://code.jquery.com/jquery-1.10.2.js">
 </script>
 
@@ -21,11 +25,10 @@
 <br/>
 
 <button type="button" id="myBtn" onclick="myFunction()">Run automaton</button>
-
-<br/>
-<br/>
+<button type="button" id="step" onclick="stepDrawAutomaton()">Step me</button>
 
 <p id="output"></p>
+
 </body>
 <script src="js-ui.js"></script>
 <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>

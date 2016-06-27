@@ -11,3 +11,15 @@ p {
     color: ghostwhite;
     font-weight: bold;
 }
+
+line.arrow {
+    stroke: #000;
+    stroke-width: 1px;
+}
+marker#arrow {
+    fill: #000;
+}
+.link-label {
+    font-family: sans-serif;
+    font-size: 11px;
+}

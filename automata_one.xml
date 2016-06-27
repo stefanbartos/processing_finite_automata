@@ -1,18 +1,18 @@
 <automata>
     <state id="A">
-        <transition value="a" target="B"/>
+        <transition value="a" src="A" target="B"/>
     </state>
     <state id="B">
-        <transition value="c" target="C"/>
-        <transition value="b" target="D"/>
+        <transition value="c" src="B" target="C"/>
+        <transition value="b" src="B" target="D"/>
     </state>
     <state id="C">
-        <transition value="a" target="D"/>
-        <transition value="b" target="A"/>
+        <transition value="a" src="C" target="D"/>
+        <transition value="b" src="C" target="A"/>
     </state>
     <state id="D">
-        <transition value="a" target="D"/>
-        <transition value="c" target="D"/>
+        <transition value="a" src="D" target="D"/>
+        <transition value="c" src="D" target="D"/>
     </state>
     <initial id="A"/>
     <final id="D"/>
