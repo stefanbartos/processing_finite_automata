@@ -54,7 +54,7 @@ public class Controller extends HttpServlet {
     }
 
     /**
-     * Function to return all files saved in data folder in xml element names separated with semicolon
+     * Function to return all files saved in data folder in list
      * @param request HttpServletRequest
      * @param response HttpServletResponse
      * @throws ServletException In case something goes wrong with server

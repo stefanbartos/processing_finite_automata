@@ -14,15 +14,11 @@
 </head>
 <body>
 
-<!--<p>Select automaton:
-    <label for="mySelect"></label><select id="mySelect"></select>
-</p>-->
-
-<button type="button" id="getAutomata" onclick="getAutomata()">Get Automata</button>
-<button type="button" id="deleteAutomata" onclick="deleteAutomata()">Delete Automata</button>
-<button type="button" id="selectAutomata" onclick="selectAutomata()">Select Automata</button>
+<button type="button" id="getAutomaton" onclick="getAutomaton()">List automatons</button>
+<button type="button" id="deleteAutomaton" onclick="deleteAutomaton()">Delete Automaton</button>
+<button type="button" id="selectAutomaton" onclick="selectAutomaton()">Select Automaton</button>
 <p>Name of automaton XML file:
-    <label for="automataToDelete"></label><input type="text" id="automataToDelete" value="">
+    <label for="automatonToDelete"></label><input type="text" id="automatonToDelete" value="">
 </p>
 
 
@@ -35,7 +31,7 @@
 <button type="button" id="myBtn" onclick="myFunction()">Run automaton</button>
 <button type="button" id="step" onclick="stepDrawAutomaton()">Step me</button>
 
-<input type="button" value="Click Me" style="clear: right;">
+<input type="button" value="Help" onclick="showHelp()" style="clear: right;">
 
 <p id="output"></p>
 

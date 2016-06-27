@@ -1,7 +1,14 @@
 function showHelp() {
-
+    var h = "" +
+        "List Automata: Shows all saved automatas\n" +
+        "Delete Automata: Deletes chosen automata\n" +
+        "Select Automata: Loads chosen automata and prepares it for calculation\n" +
+        "Run Automata: Calculates over selected words, words must be separated by space\n" +
+        "Step me: Shows graphical representation of calculation, step by step\n";
+    alert(h);
 }
 
+//BackEnd Request
 function getAutomaton() {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
@@ -14,6 +21,7 @@ function getAutomaton() {
     xhr.send(null);
 }
 
+//BackEnd Request
 function selectAutomaton() {
     temp = document.getElementById("automataToDelete").value;
     var xhr = new XMLHttpRequest();
@@ -137,6 +145,7 @@ function myFunction() {
 
     var words = input.split(" ");
 
+    //storage for active states during calculation
     store = [];
 
     for (var k = 0; k < words.length; k += 1) {
@@ -165,6 +174,7 @@ function myFunction() {
             // remove duplicate states id's
             newStates = $.unique(newStates);
 
+            //If someones comments this it stops working for more than one word, nobody knows why exactly, but it does
             automaton.activeStates = jQuery.extend(true, {}, newStates);
 
             store[k][j] = [];

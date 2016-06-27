@@ -1,57 +1,26 @@
-/*var langArray = [
-    {
-        value: '<automata>     <state id="A">         <transition value="a" src="A" target="B"/>        <transition value="a" src="A" target="A"/>        <transition value="a" src="A" target="D"/>     </state>     <state id="B">         <transition value="c" src="B"  target="C"/>         <transition value="b" src="B"  target="D"/>     </state>     <state id="C">         <transition value="a" src="C"  target="D"/>         <transition value="b" src="C"  target="A"/>     </state>     <state id="D"><transition value="a" src="D"  target="D"/></state>     <initial id="A"/>      <initial id="B"/>     <final id="D"/> </automata>',
-        text: "Automata 1"
-    },
-    {value: "val2", text: "Automata 2"},
-    {
-        value: '<automata>     <state id="A">         <transition value="a" src="A" target="B"/>     </state>     <state id="B">         <transition value="c" src="B"  target="C"/>         <transition value="b" src="B"  target="D"/>     </state>     <state id="C">         <transition value="a" src="C"  target="D"/>         <transition value="b" src="C"  target="A"/>     </state>     <state id="D">         <transition value="a" src="D" target="D"/>         <transition value="c" src="D"  target="D"/>     </state>     <initial id="A"/>     <final id="D"/> </automata>',
-        text: "Automata 3"
-    }
-];
-
-var select = document.getElementById('mySelect'),
-    option,
-    i = 0,
-    il = langArray.length;
-
-for (; i < il; i += 1) {
-    option = document.createElement('option');
-    option.setAttribute('value', langArray[i].value);
-    option.appendChild(document.createTextNode(langArray[i].text));
-    select.appendChild(option);
-}*/
-
-function getAutomata() {
-    //dost mozno ide len na firefoxe
-    var xhr = new XMLHttpRequest();
-     xhr.onreadystatechange = function() {
-     if (xhr.readyState == 4) {
-     var data = xhr.responseText;
-     alert(data);
-     }
-     }
-     xhr.open('GET', 'index/list', true);
-     xhr.send(null);
-
-    //obecne riesenie?
-/*
-    $.ajax({
-        url: "index/list",
-        type: "GET",
-        success: function (html) {
-            alert(html);
-        }
-    });*/
-
-    /*
-     $.get('index/list', function(data) {
-     alert(data);
-     });*/
-
+function showHelp() {
+    var h = "" +
+        "List Automata: Shows all saved automatas\n" +
+        "Delete Automata: Deletes chosen automata\n" +
+        "Select Automata: Loads chosen automata and prepares it for calculation\n" +
+        "Run Automata: Calculates over selected words, words must be separated by space\n" +
+        "Step me: Shows graphical representation of calculation, step by step\n";
+    alert(h);
 }
 
-function selectAutomata() {
+function getAutomaton() {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {
+            var data = xhr.responseText;
+            alert(data);
+        }
+    };
+    xhr.open('GET', 'index/list', true);
+    xhr.send(null);
+}
+
+function selectAutomaton() {
     temp = document.getElementById("automataToDelete").value;
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
@@ -60,23 +29,17 @@ function selectAutomata() {
             alert(data);
         }
     };
-    xhr.open('GET', 'index/selectAutomata?automataToSelect=' + temp, true);
+    xhr.open('GET', 'index/selectAutomaton?automataToSelect=' + temp, true);
     xhr.send(null);
     return data;
 }
 
-function deleteAutomata() {
+/**
+ * This function delete automaton
+ */
+function deleteAutomaton() {
     temp = document.getElementById("automataToDelete").value;
     alert(temp);
-    /*$.ajax({
-     type: "DELETE",
-     url: "index/delete",
-     data: {"automataToDelete": temp},
-     success : function () {
-     getAutomata();
-     }
-     });*/
-
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4) {
@@ -88,6 +51,14 @@ function deleteAutomata() {
     xhr.send(null);
 }
 
+/**
+ * This function returns array of state's elements within parameter
+ * id array
+ *
+ * @param $xml xml file where to find states
+ * @param id array of id's to find
+ * @returns {Array} result array of state's
+ */
 function getStates($xml, id) {
     var res = [];
     $.each(id, function (i, val) {
@@ -96,18 +67,28 @@ function getStates($xml, id) {
     return res;
 }
 
-function getElementAttribute(state, type) {
-    var id = [];
+/**
+ * This function return array of attributes with name from element's
+ * array
+ * @param state element's array to find from
+ * @param name name of the searching elements
+ * @returns {Array} result array with defined criteria
+ */
+function getElementAttribute(state, name) {
+    var arr = [];
     for (var q = 0; q < state.length; ++q) {
-        id.push(state[q].getAttribute(type));
+        arr.push(state[q].getAttribute(name));
     }
-    return id;
+    return arr;
 }
 
 var a = 0;
 var b = -1;
 var c = 0;
 
+/**
+ * This function draws each step of automaton
+ */
 function stepDrawAutomaton() {
     if (a < store.length) {
         if (b == -1) {
@@ -133,7 +114,9 @@ function stepDrawAutomaton() {
         alert("Last word has been reached.");
     }
 }
-
+/**
+ *  This function perform a calculation of automaton.
+ **/
 function myFunction() {
     a = 0;
     b = -1;
@@ -142,12 +125,8 @@ function myFunction() {
 
     var input = document.getElementById("inputWords").value;
 
-
-    //var $xml = $($.parseXML(select.value));
-
     var xmlDoc = $.parseXML(data),
         $xml = $(xmlDoc);
-    //var $xml = $.parseXML(data);
     console.log($xml);
     initId = getElementAttribute($xml.find('initial'), 'id');
     var finId = getElementAttribute($xml.find('final'), 'id');
@@ -168,12 +147,10 @@ function myFunction() {
 
     for (var k = 0; k < words.length; k += 1) {
         if (words[k] === "") {
-            //split string when empty
             break;
         }
 
         store[k] = [];
-        //store[k].length = 0;
 
         automaton.activeStates.length = 0;
 
@@ -194,7 +171,6 @@ function myFunction() {
             // remove duplicate states id's
             newStates = $.unique(newStates);
 
-            //do not comment
             automaton.activeStates = jQuery.extend(true, {}, newStates);
 
             store[k][j] = [];
@@ -259,6 +235,10 @@ function circleArrowPosY(numStates, whichState) {
     return (-Math.cos(angle * (Math.PI / 180)) * (r + 10));
 }
 
+/**
+ * This function draws automaton
+ * @param automaton automaton to draw
+ */
 function drawAutomaton(automaton) {
     var states = [];
     for (var n = 0; n < automaton.states.length; ++n) {

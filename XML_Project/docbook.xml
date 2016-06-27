@@ -5,13 +5,21 @@
         <title>Backend</title>
         <para>Mojou úlohou bolo postarať sa o spojenie javy a javascriptu, teda backednu a frontendu. Ako aplikačný
             server
-            som zvolil tomcat, pretože sme na ňom robili už v PV168. Nebolo to príliš zložité, zväčšej časti sa jednalo
-            len o
-            jednoduché operácie nad file systémom.
+            som zvolil tomcat, pretože sme na ňom robili už v PV168. Nebolo to príliš zložité, pre náš projekt stačí
+            jednoduchá konfigurácia. Keďže sú všetky operácia jednoduché nebolo treba používať žiadny z pokročilejších
+            frameworkov a vystačil som si s HttpServletom.
+        </para>
+        <para>
+            Samotné súbory s automatmi sú uložené v zložke v štruktúre projektu. Práca so súbormi je v jave pomerne
+            jednoduchá, jedinou zložitejšou vecou bolo prísť nato ako vypropagovať potrebné informácie na frontend.
         </para>
         <para>Následne som pomáhal s úpravou výpočtu automatu, čo bolo značne zložité, pretože o javascripte ani
-            funkcionálnom
-            paradigmate toho moc neviem. Musím ale povedať, že som sa toho celkom veľa naučil.
+            funkcionálnom paradigmate toho moc neviem. Značne sme využili pri práci JQuery, ktoré sa ukázalo ako vcelku
+            prívetivé.
+        </para>
+        <para>
+            Ak to všetko zhrniem, musím povedať, že som sa toho na tomto projekte veľa naučil, najmä ohľadom už
+            spomínaného javascriptu. Hodnotím tento projekt ako prínosný.
         </para>
     </chapter>
     <chapter xml:id="433288">
