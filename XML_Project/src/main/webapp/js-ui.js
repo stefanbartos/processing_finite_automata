@@ -39,7 +39,7 @@ function getAutomata() {
     $.ajax({
         url: "index/list",
         type: "GET",
-        success: function(html){
+        success: function (html) {
             alert(html);
         }
     });
@@ -51,17 +51,16 @@ function getAutomata() {
 
 }
 
-data
 function selectAutomata() {
     temp = document.getElementById("automataToDelete").value;
     var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function() {
+    xhr.onreadystatechange = function () {
         if (xhr.readyState == 4) {
             data = xhr.responseText;
             alert(data);
         }
     };
-    xhr.open('GET', 'index/selectAutomata?automataToSelect='+temp, true);
+    xhr.open('GET', 'index/selectAutomata?automataToSelect=' + temp, true);
     xhr.send(null);
     return data;
 }
@@ -79,13 +78,13 @@ function deleteAutomata() {
      });*/
 
     var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function() {
+    xhr.onreadystatechange = function () {
         if (xhr.readyState == 4) {
             var data = xhr.responseText;
             alert(data);
         }
     };
-    xhr.open('DELETE', 'index/delete?automataToDelete='+temp, true);
+    xhr.open('DELETE', 'index/delete?automataToDelete=' + temp, true);
     xhr.send(null);
 }
 
@@ -146,8 +145,8 @@ function myFunction() {
 
     //var $xml = $($.parseXML(select.value));
 
-    var xmlDoc = $.parseXML( data ),
-        $xml = $( xmlDoc );
+    var xmlDoc = $.parseXML(data),
+        $xml = $(xmlDoc);
     //var $xml = $.parseXML(data);
     console.log($xml);
     initId = getElementAttribute($xml.find('initial'), 'id');

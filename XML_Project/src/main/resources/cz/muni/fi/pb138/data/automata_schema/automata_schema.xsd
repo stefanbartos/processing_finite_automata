@@ -3,6 +3,7 @@
     <xs:element name="transition">
         <xs:complexType>
             <xs:attribute name="value" type="xs:string" use="required"/>
+            <xs:attribute name="source" type="xs:string" use="required"/>
             <xs:attribute name="target" type="xs:string" use="required"/>
         </xs:complexType>
     </xs:element>

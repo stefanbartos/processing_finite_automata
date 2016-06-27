@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<book xml:id="documentation" xmlns="http://docbook.org/ns/docboo" version="5.0">
+    <title>PB138 Processing of finite automata</title>
+    <chapter xml:id="433793">
+        <title>Backend</title>
+        <para>Mojou úlohou bolo postarať sa o spojenie javy a javascriptu, teda backednu a frontendu. Ako aplikačný
+            server
+            som zvolil tomcat, pretože sme na ňom robili už v PV168. Nebolo to príliš zložité, zväčšej časti sa jednalo
+            len o
+            jednoduché operácie nad file systémom.
+        </para>
+        <para>Následne som pomáhal s úpravou výpočtu automatu, čo bolo značne zložité, pretože o javascripte ani
+            funkcionálnom
+            paradigmate toho moc neviem. Musím ale povedať, že som sa toho celkom veľa naučil.
+        </para>
+    </chapter>
+    <chapter xml:id="433288">
+        <title>Grafika</title>
+        <para>
+            Na tomto projekte som pracoval hlavne s grafickou časťou, kde som využil najmä knižnicu data-driven document
+            d3js, ktorá ponúka vykreslovanie grafických objektov pomocou svg. Ďalej som pracoval na výpočte automatu a
+            návrhu
+            XML dokumentu, ktorý ukladá automat. Následne som vytvoril príslušné schéma k XML dokumentom.
+        </para>
+        <para>
+            Predtým ako prejdem k samotnej implementácii, tak je potrebné spomenúť, že osobne som nemal veľké skúsenosti
+            s svg grafikou a javascriptom je možné povedať žiadne. Preto tento projekt bol náročnejší pre mňa ako by
+            sa mohlo zdať.
+        </para>
+        <subtitle>D3js &amp; SVG</subtitle>
+        <para>
+            Táto časť implementácie bola mojou hlavnou prácou. Pri riešení som narazil na rôzne problémy ako napr.
+            rozmiestnenie jednotlivých stavov, tak sa prechody medzi sebou, čo najmenej prekrývali a stavy neboli
+            veľmi blízko alebo naopak ďaleko rozmiestnené. Knižnica d3js má dobrú dokumentáciu a je ľahko implemetovateľná.
+            Ponúka funkcionálny sposôb programovania, ktorý môže byť niekedy ťažší na pochopenie. Na druhej strane
+            svg grafika je oproti tejto knižnici veľmi pracná.
+        </para>
+        <para>
+            Na záver hodnotím tento projekt ako veľmi prínosný pre mňa. Rozhodne som veľa naučil. 
+        </para>
+    </chapter>
+    <chapter xml:id="433504">
+
+    </chapter>
+</book>
