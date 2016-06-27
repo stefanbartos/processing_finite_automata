@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<script 
+src="https://code.jquery.com/jquery-1.10.2.js">
+</script>
+
+<body>
+
+
+	<p>Select automata:
+	<select id="mySelect"></select>
+	</p>
+
+	<button type="button" id="getAutomata" onclick="getAutomata()">Get Automata</button>
+	<button type="button" id="deleteAutomata" onclick="deleteAutomata()">Delete Automata</button>
+	<button type="button" id="selectAutomata" onclick="selectAutomata()">Select Automata</button>
+	<p>
+		<input type="text" id="automataToDelete" value="">
+	</p>
+
+
+	<p>Write a word to check:
+	<input type="text" id="myText" value="">
+	</p>
+	
+	<br/>
+	
+	<button type="button" id="myBtn" onclick="myFunction()">Run automata</button>
+	
+	<br/>
+	<br/>
+	
+	<p id="output"></p>
+</body>
+<script type="text/javascript" src="js-ui.js"></script>
+</html>

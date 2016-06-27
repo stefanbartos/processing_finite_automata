@@ -22,6 +22,71 @@ for (; i < il; i += 1) {
     select.appendChild(option);
 }
 
+function getAutomata() {
+    //dost mozno ide len na firefoxe
+    /*var xhr = new XMLHttpRequest();
+     xhr.onreadystatechange = function() {
+     if (xhr.readyState == 4) {
+     var data = xhr.responseText;
+     alert(data);
+     }
+     }
+     xhr.open('GET', 'index/list', true);
+     xhr.send(null);*/
+
+    //obecne riesenie?
+
+    $.ajax({
+        url: "index/list",
+        type: "GET",
+        success: function(html){
+            alert(html);
+        }
+    });
+
+    /*
+     $.get('index/list', function(data) {
+     alert(data);
+     });*/
+
+}
+
+function selectAutomata() {
+    temp = document.getElementById("automataToDelete").value;
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4) {
+            var data = xhr.responseText;
+            alert(data);
+        }
+    }
+    xhr.open('GET', 'index/selectAutomata?automataToSelect='+temp, true);
+    xhr.send(null);
+}
+
+function deleteAutomata() {
+    temp = document.getElementById("automataToDelete").value;
+    alert(temp);
+    /*$.ajax({
+     type: "DELETE",
+     url: "index/delete",
+     data: {"automataToDelete": temp},
+     success : function () {
+     getAutomata();
+     }
+     });*/
+
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4) {
+            var data = xhr.responseText;
+            alert(data);
+        }
+    }
+    xhr.open('DELETE', 'index/delete?automataToDelete='+temp, true);
+    xhr.send(null);
+}
+
 function getStates($xml, id) {
     var res = [];
     $.each(id, function (i, val) {

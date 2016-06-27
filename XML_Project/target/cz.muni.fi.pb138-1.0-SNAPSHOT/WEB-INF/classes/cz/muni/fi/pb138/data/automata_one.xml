@@ -1,0 +1,19 @@
+<automata>
+    <state id="A">
+        <transition value="a" target="B"/>
+    </state>
+    <state id="B">
+        <transition value="c" target="C"/>
+        <transition value="b" target="D"/>
+    </state>
+    <state id="C">
+        <transition value="a" target="D"/>
+        <transition value="b" target="A"/>
+    </state>
+    <state id="D">
+        <transition value="a" target="D"/>
+        <transition value="c" target="D"/>
+    </state>
+    <initial id="A"/>
+    <final id="D"/>
+</automata>
