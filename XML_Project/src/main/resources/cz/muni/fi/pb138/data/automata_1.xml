@@ -5,6 +5,7 @@
     <state id="B">
         <transition value="c" src="B" target="C"/>
         <transition value="b" src="B" target="D"/>
+        <transition value="b" src="B" target="B"/>
     </state>
     <state id="C">
         <transition value="a" src="C" target="D"/>
@@ -12,8 +13,12 @@
     </state>
     <state id="D">
         <transition value="a" src="D" target="D"/>
-        <transition value="c" src="D" target="D"/>
+        <transition value="c" src="D" target="E"/>
+    </state>
+    <state id="E">
+        <transition value="a" src="E" target="E"/>
     </state>
     <initial id="A"/>
     <final id="D"/>
+    <final id="E"/>
 </automata>

@@ -15,7 +15,7 @@ function getAutomaton() {
 }
 
 function selectAutomaton() {
-    temp = document.getElementById("automataToDelete").value;
+    temp = document.getElementById("automatonToDelete").value;
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4) {
@@ -23,7 +23,7 @@ function selectAutomaton() {
             alert(data);
         }
     };
-    xhr.open('GET', 'index/selectAutomaton?automataToSelect=' + temp, true);
+    xhr.open('GET', 'index/selectAutomaton?automatonToDelete=' + temp, true);
     xhr.send(null);
     return data;
 }
@@ -32,7 +32,7 @@ function selectAutomaton() {
  * This function delete automaton
  */
 function deleteAutomaton() {
-    temp = document.getElementById("automataToDelete").value;
+    temp = document.getElementById("automatonToDelete").value;
     alert(temp);
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
@@ -41,7 +41,7 @@ function deleteAutomaton() {
             alert(data);
         }
     };
-    xhr.open('DELETE', 'index/delete?automataToDelete=' + temp, true);
+    xhr.open('DELETE', 'index/delete?automatonToDelete=' + temp, true);
     xhr.send(null);
 }
 
@@ -295,7 +295,6 @@ function drawAutomaton(automaton) {
             .style("font-size", "17px")
             .style("font-wight", "bold")
             .text(state_to_commom_state[e].label);
-
     }
 
     for (var i = 0; i < states.length; ++i) {

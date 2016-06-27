@@ -102,7 +102,7 @@ public class Controller extends HttpServlet {
      * @throws IOException In case something goes wrong with IO operations
      */
     private void removeFiles(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String str = request.getParameter("automataToDelete");
+        String str = request.getParameter("automatonToDelete");
         File file = null;
         try {
             file = new File(getClass().getResource("data").toURI());
@@ -132,7 +132,7 @@ public class Controller extends HttpServlet {
      * @throws IOException In case something goes wrong with IO operations
      */
     private void selectAutomata(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String str = request.getParameter("automataToSelect");
+        String str = request.getParameter("automatonToDelete");
         File file = null;
         StringBuilder sb = new StringBuilder();
 
