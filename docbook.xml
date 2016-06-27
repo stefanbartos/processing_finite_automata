@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article xml:id="simple_book" xmlns="http://docbook.org/ns/docbook" version="5.0">
+    <title>PB138 Processing of finite automata</title>
+    <chapter xml:id="433793">
+        <title>Backend</title>
+        <para>Mojou úlohou bolo postarať sa o spojenie javy a javascriptu, teda backednu a frontendu. Ako aplikačný server
+        som zvolil tomcat, pretože sme na ňom robili už v PV168. Nebolo to príliš zložité, zväčšej časti sa jednalo len o
+        jednoduché operácie nad file systémom. </para>
+        <para>Následne som pomáhal s úpravou výpočtu automatu, čo bolo značne zložité, pretože o javascripte ani funkcionálnom
+        paradigmate toho moc neviem. Musím ale povedať, že som sa toho celkom veľa naučil.</para>
+    </chapter>
+    <chapter xml:id="433288">
+        <title>Chapter 2</title>
+        <para>Hello again, world!</para>
+    </chapter>
+</article>

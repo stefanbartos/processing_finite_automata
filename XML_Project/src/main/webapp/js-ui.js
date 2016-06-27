@@ -51,17 +51,19 @@ function getAutomata() {
 
 }
 
+data
 function selectAutomata() {
     temp = document.getElementById("automataToDelete").value;
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4) {
-            var data = xhr.responseText;
+            data = xhr.responseText;
             alert(data);
         }
     };
     xhr.open('GET', 'index/selectAutomata?automataToSelect='+temp, true);
     xhr.send(null);
+    return data;
 }
 
 function deleteAutomata() {
@@ -141,8 +143,13 @@ function myFunction() {
 
     var input = document.getElementById("inputWords").value;
 
-    var $xml = $($.parseXML(select.value));
 
+    //var $xml = $($.parseXML(select.value));
+
+    var xmlDoc = $.parseXML( data ),
+        $xml = $( xmlDoc );
+    //var $xml = $.parseXML(data);
+    console.log($xml);
     initId = getElementAttribute($xml.find('initial'), 'id');
     var finId = getElementAttribute($xml.find('final'), 'id');
 
