@@ -42,7 +42,7 @@ public class Controller extends HttpServlet {
             case "/list":
                 listFiles(request,response);
                 break;
-            case "/selectAutomata" :
+            case "/selectAutomaton" :
                 selectAutomata(request,response);
                 break;
             default:

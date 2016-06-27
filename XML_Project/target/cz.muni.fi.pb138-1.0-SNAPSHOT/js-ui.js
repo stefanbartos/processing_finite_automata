@@ -1,4 +1,4 @@
-var langArray = [
+/*var langArray = [
     {
         value: '<automata>     <state id="A">         <transition value="a" src="A" target="B"/>        <transition value="a" src="A" target="A"/>        <transition value="a" src="A" target="D"/>     </state>     <state id="B">         <transition value="c" src="B"  target="C"/>         <transition value="b" src="B"  target="D"/>     </state>     <state id="C">         <transition value="a" src="C"  target="D"/>         <transition value="b" src="C"  target="A"/>     </state>     <state id="D"><transition value="a" src="D"  target="D"/></state>     <initial id="A"/>      <initial id="B"/>     <final id="D"/> </automata>',
         text: "Automata 1"
@@ -20,7 +20,7 @@ for (; i < il; i += 1) {
     option.setAttribute('value', langArray[i].value);
     option.appendChild(document.createTextNode(langArray[i].text));
     select.appendChild(option);
-}
+}*/
 
 function getAutomata() {
     //dost mozno ide len na firefoxe
