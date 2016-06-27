@@ -77,7 +77,7 @@ public class Controller extends HttpServlet {
                     if (i - 1 == listOfFiles.length) {
                         temp.append(listOfFiles[i].getName());
                     } else {
-                        temp.append(listOfFiles[i].getName() + ";");
+                        temp.append(listOfFiles[i].getName() + "\n");
                     }
                 }
             }
@@ -89,7 +89,7 @@ public class Controller extends HttpServlet {
 
         PrintWriter out = response.getWriter();
 
-        out.write("<names>" + names + "</names>");
+        out.write(names);
         out.flush();
     }
 

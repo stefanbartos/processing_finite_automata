@@ -24,7 +24,7 @@ for (; i < il; i += 1) {
 
 function getAutomata() {
     //dost mozno ide len na firefoxe
-    /*var xhr = new XMLHttpRequest();
+    var xhr = new XMLHttpRequest();
      xhr.onreadystatechange = function() {
      if (xhr.readyState == 4) {
      var data = xhr.responseText;
@@ -32,17 +32,17 @@ function getAutomata() {
      }
      }
      xhr.open('GET', 'index/list', true);
-     xhr.send(null);*/
+     xhr.send(null);
 
     //obecne riesenie?
-
+/*
     $.ajax({
         url: "index/list",
         type: "GET",
         success: function (html) {
             alert(html);
         }
-    });
+    });*/
 
     /*
      $.get('index/list', function(data) {

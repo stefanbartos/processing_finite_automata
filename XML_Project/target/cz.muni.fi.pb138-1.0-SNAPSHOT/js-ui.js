@@ -1,4 +1,4 @@
-    var langArray = [
+var langArray = [
     {
         value: '<automata>     <state id="A">         <transition value="a" src="A" target="B"/>        <transition value="a" src="A" target="A"/>        <transition value="a" src="A" target="D"/>     </state>     <state id="B">         <transition value="c" src="B"  target="C"/>         <transition value="b" src="B"  target="D"/>     </state>     <state id="C">         <transition value="a" src="C"  target="D"/>         <transition value="b" src="C"  target="A"/>     </state>     <state id="D"><transition value="a" src="D"  target="D"/></state>     <initial id="A"/>      <initial id="B"/>     <final id="D"/> </automata>',
         text: "Automata 1"
@@ -24,7 +24,7 @@ for (; i < il; i += 1) {
 
 function getAutomata() {
     //dost mozno ide len na firefoxe
-    /*var xhr = new XMLHttpRequest();
+    var xhr = new XMLHttpRequest();
      xhr.onreadystatechange = function() {
      if (xhr.readyState == 4) {
      var data = xhr.responseText;
@@ -32,17 +32,17 @@ function getAutomata() {
      }
      }
      xhr.open('GET', 'index/list', true);
-     xhr.send(null);*/
+     xhr.send(null);
 
     //obecne riesenie?
-
+/*
     $.ajax({
         url: "index/list",
         type: "GET",
-        success: function(html){
+        success: function (html) {
             alert(html);
         }
-    });
+    });*/
 
     /*
      $.get('index/list', function(data) {
@@ -54,13 +54,13 @@ function getAutomata() {
 function selectAutomata() {
     temp = document.getElementById("automataToDelete").value;
     var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function() {
+    xhr.onreadystatechange = function () {
         if (xhr.readyState == 4) {
             data = xhr.responseText;
             alert(data);
         }
     };
-    xhr.open('GET', 'index/selectAutomata?automataToSelect='+temp, true);
+    xhr.open('GET', 'index/selectAutomata?automataToSelect=' + temp, true);
     xhr.send(null);
     return data;
 }
@@ -78,13 +78,13 @@ function deleteAutomata() {
      });*/
 
     var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function() {
+    xhr.onreadystatechange = function () {
         if (xhr.readyState == 4) {
             var data = xhr.responseText;
             alert(data);
         }
     };
-    xhr.open('DELETE', 'index/delete?automataToDelete='+temp, true);
+    xhr.open('DELETE', 'index/delete?automataToDelete=' + temp, true);
     xhr.send(null);
 }
 
@@ -145,8 +145,8 @@ function myFunction() {
 
     //var $xml = $($.parseXML(select.value));
 
-    var xmlDoc = $.parseXML( data ),
-        $xml = $( xmlDoc );
+    var xmlDoc = $.parseXML(data),
+        $xml = $(xmlDoc);
     //var $xml = $.parseXML(data);
     console.log($xml);
     initId = getElementAttribute($xml.find('initial'), 'id');
